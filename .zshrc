@@ -1,5 +1,3 @@
-zmodload zsh/zprof
-
 source ~/.zplug/init.zsh
 
 zplug check || zplug install
@@ -13,6 +11,7 @@ alias date="gdate"
 alias tree="tree -C"
 alias updatedb="/usr/libexec/locate.updatedb"
 alias git="hub"
+#alias brew="http_proxy=http://127.0.0.1:3128 brew"
 
 bindkey -e  ## emacs key bindings
 
