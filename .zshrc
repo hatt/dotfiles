@@ -19,3 +19,12 @@ bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 bindkey '^[^[[C' emacs-forward-word
 bindkey '^[^[[D' emacs-backward-word
+
+function zsh_docker_machine_active() {
+  local docker_machine="$DOCKER_MACHINE_NAME"
+
+  if [[ -n "$docker_machine" ]]; then
+#    echo -n "\uE7B0 $docker_machine%{%f%}"
+    echo -n "\uF21A $docker_machine%{%f%}"
+  fi
+}
