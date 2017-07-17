@@ -3,15 +3,31 @@ source ~/.zplug/init.zsh
 zplug check || zplug install
 zplug load
 
-alias ls="gls --color=auto"
-alias du="gdu"
-alias df="gdf"
-alias sed="gsed"
-alias date="gdate"
-alias tree="tree -C"
-alias updatedb="/usr/libexec/locate.updatedb"
-alias git="hub"
-#alias brew="http_proxy=http://127.0.0.1:3128 brew"
+alias bb="brew bundle --global"
+alias cot='colorize'
+alias date='gdate'
+alias df='gdf'
+alias dm='docker-machine'
+alias du='gdu'
+alias git='hub'
+alias ls='gls --color=auto'
+alias sed='gsed'
+alias tree='tree -C'
+alias updatedb='/usr/libexec/locate.updatedb'
+
+alias dex='docker exec -i -t'
+alias drma='docker rm $(docker ps -aq)'
+alias drmi='docker rmi $(docker images -q -f "dangling=true")'
+
+function dbash() {
+  docker exec -it $(docker ps -aqf "name=$1") bash
+}
+
+function drme() {
+  eval $(docker-machine env $@)
+}
+
+compdef __docker-machine_hosts_running drme
 
 bindkey -e  ## emacs key bindings
 
@@ -24,7 +40,6 @@ function zsh_docker_machine_active() {
   local docker_machine="$DOCKER_MACHINE_NAME"
 
   if [[ -n "$docker_machine" ]]; then
-#    echo -n "\uE7B0 $docker_machine%{%f%}"
     echo -n "\uF21A $docker_machine%{%f%}"
   fi
 }

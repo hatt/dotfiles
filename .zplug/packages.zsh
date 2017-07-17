@@ -11,5 +11,6 @@ zplug "supercrabtree/k"
 zplug "zsh-users/zsh-completions",			depth:1
 zplug "dannyzen/cf-zsh-autocomplete-plugin"
 zplug "arzzen/calc.plugin.zsh"
+
 zplug "plugins/sublime",	from:oh-my-zsh
 zplug "plugins/colorize",	from:oh-my-zsh
