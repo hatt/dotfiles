@@ -1,0 +1,33 @@
+syntax "HCL" "\.(hcl|tf|tfvars)$"
+header "^\{$"
+
+color blue   "\<[-]?[1-9][0-9]*([Ee][+-]?[0-9]+)?\>"  "\<[-]?[0](\.[0-9]+)?\>"
+color cyan  "\<null\>"
+
+# Top level keywords
+color green "\<(atlas|output|provider|provisioner|resource|variable)\>"
+color green "\<(terraform|var|self|count|module|path|data)\>"
+
+# Built-in functions
+color brightblue "\<(basename|base64decode|base64encode|base64sha(256|512)|bcrypt|md5|sha(1|256|512))\>"
+color brightblue "\<(cidrhost|cidrnetmask|cidrsubnet)\>"
+color brightblue "\<(chomp|coalesce|coalescelist|compact|concat|dirname|distinct|element|file|format|formatlist|index|join|keys|length)\>"
+color brightblue "\<(list|lookup|map|matchkeys|merge|pathexpand|replace|slice|sort|split|timestamp|trimspace|uuid|values|zipmap)\>"
+color brightblue "\<(ceil|floor|log|max|min|pow|signum)\>"
+color brightblue "\<(jsonencode|lower|upper|substr|title)\>"
+
+# Values
+color yellow ""(\\.|[^"])*"|'(\\.|[^'])*'"
+color brightyellow "\<(true|false|yes|no|on|off)\>"
+color brightyellow "\"(\\"|[^"])*\"[[:space:]]*:"  "'(\'|[^'])*'[[:space:]]*:"
+color magenta   "\\u[0-9a-fA-F]{4}|\\[bfnrt'"/\\]"
+color magenta ""\${}""
+
+# Excess whitespace
+color ,green "[[:space:]]+$"
+color ,red "	+ +| +	+"
+
+# Comment highlighting
+icolor cyan "//.*"
+icolor cyan start="/\*" end="\*/"
+icolor cyan "^[[:space:]]*#.*$"
