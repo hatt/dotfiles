@@ -18,6 +18,7 @@ alias updatedb='/usr/libexec/locate.updatedb'
 alias dex='docker exec -i -t'
 alias drma='docker rm $(docker ps -aq)'
 alias drmi='docker rmi $(docker images -q -f "dangling=true")'
+alias dmls='docker-machine ls'
 
 function dbash() {
   docker exec -it $(docker ps -aqf "name=$1") bash
@@ -43,3 +44,7 @@ function zsh_docker_machine_active() {
     echo -n "\uF21A $docker_machine%{%f%}"
   fi
 }
+
+# crap for Azure
+autoload bashcompinit && bashcompinit
+source /usr/local/etc/bash_completion.d/az
