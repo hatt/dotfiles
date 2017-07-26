@@ -8,7 +8,6 @@ zplug "lib/key-bindings",	from:oh-my-zsh
 zplug "lib/history",		from:oh-my-zsh
 
 zplug "supercrabtree/k"
-zplug "zsh-users/zsh-completions",			depth:1
 zplug "dannyzen/cf-zsh-autocomplete-plugin"
 zplug "arzzen/calc.plugin.zsh"
 
