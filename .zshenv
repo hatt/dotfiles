@@ -1,5 +1,9 @@
 export LANG="en_AU.UTF-8"
 
+# Suggestions
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+#export ZSH_AUTOSUGGEST_USE_ASYNC=true
+
 # Visual
 export POWERLEVEL9K_MODE=nerdfont-complete
 
