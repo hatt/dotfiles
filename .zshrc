@@ -45,6 +45,13 @@ function zsh_docker_machine_active() {
   fi
 }
 
+function zsh_terraform_env_active() {
+  local terraform_env=$(cat .terraform/environment 2> /dev/null)
+  if [[ -n $terraform_env ]]; then
+    echo -n "\uF0EE $terraform_env%{%f%}"
+  fi
+}
+
 # crap for Azure
 autoload bashcompinit && bashcompinit
 source /usr/local/etc/bash_completion.d/az
