@@ -11,6 +11,7 @@ alias dm='docker-machine'
 alias du='gdu'
 alias git='hub'
 alias ls='gls --color=auto'
+alias ll="ls -lah"
 alias sed='gsed'
 alias tree='tree -C'
 alias updatedb='/usr/libexec/locate.updatedb'
@@ -51,7 +52,3 @@ function zsh_terraform_env_active() {
     echo -n "\uF0EE $terraform_env%{%f%}"
   fi
 }
-
-# crap for Azure
-autoload bashcompinit && bashcompinit
-source /usr/local/etc/bash_completion.d/az

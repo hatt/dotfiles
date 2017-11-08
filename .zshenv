@@ -40,7 +40,7 @@ export PATH="/usr/local/sbin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-cdpath=(~ ~/code $cdpath)
+cdpath=(~ ~/work ~/code $cdpath)
 fpath=(
   /usr/local/share/zsh/site-functions
   /usr/local/share/zsh-completions
@@ -67,6 +67,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
+# other
 eval "$(thefuck --alias)"
 
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
+# run this last
 skip_global_compinit=1
