@@ -1,0 +1,6 @@
+[extensions]
+hgext.convert=
+rebase =
+
+[ui]
+username = Matt Sharpe <matt.sharpe@gmail.com>
