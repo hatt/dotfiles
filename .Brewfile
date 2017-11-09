@@ -1,9 +1,10 @@
+tap "mpv-player/mpv"
+tap "homebrew/core"
+tap "homebrew/bundle"
+tap "homebrew/services"
 tap "atlassian/tap"
 tap "caskroom/cask"
-tap "homebrew/bundle"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "mpv-player/mpv"
+cask "xquartz"
 brew "sqlite"
 brew "ansible"
 brew "apple-gcc42"
@@ -62,7 +63,6 @@ brew "xvid"
 brew "ffmpeg"
 brew "figlet"
 brew "flac"
-brew "fleetctl"
 brew "fribidi"
 brew "gd"
 brew "gdb"
@@ -99,10 +99,6 @@ brew "kibana"
 brew "leveldb"
 brew "libidn"
 brew "lftp"
-brew "libogg"
-brew "libvorbis"
-brew "libvpx"
-brew "libav", args: ["HEAD"]
 brew "libcouchbase"
 brew "libebml", args: ["c++11"]
 brew "libexif"
@@ -113,12 +109,15 @@ brew "libmagic"
 brew "libmatroska", args: ["c++11"]
 brew "memcached"
 brew "libmemcached"
+brew "libogg"
 brew "libsigc++"
 brew "libsmi"
 brew "libsodium"
 brew "yajl"
 brew "libvirt"
 brew "libvo-aacenc"
+brew "libvorbis"
+brew "libvpx"
 brew "libxml2"
 brew "libxslt"
 brew "little-cms"
@@ -175,7 +174,6 @@ brew "rebar"
 brew "redis"
 brew "rethinkdb"
 brew "riak"
-brew "rocksdb"
 brew "rpm"
 brew "rpm2cpio"
 brew "s3cmd"
@@ -203,7 +201,7 @@ brew "tor"
 brew "tree"
 brew "watch"
 brew "wget"
-brew "wireshark", args: ["with-headers", "with-libsmi", "with-lua", "with-qt"]
+brew "wireshark", args: ["with-headers", "with-libsmi", "with-qt"]
 brew "wxpython"
 brew "xdelta"
 brew "xmlrpc-c"
@@ -213,10 +211,10 @@ brew "zeromq"
 brew "zlib"
 brew "zsh"
 brew "zsh-completions"
+cask "iina"
 cask "tuntap"
 mas "Caffeine", id: 411246225
 mas "Evernote", id: 406056744
-mas "Install macOS High Sierra", id: 0
 mas "iPhoto", id: 408981381
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
@@ -226,5 +224,4 @@ mas "OneDrive", id: 823766827
 mas "QuickCast", id: 710575188
 mas "Slack", id: 803453959
 mas "The Unarchiver", id: 425424353
-mas "Xcode", id: 497799835
 mas "YoruFukurou", id: 428834068
