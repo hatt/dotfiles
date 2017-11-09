@@ -213,6 +213,7 @@ brew "zsh"
 brew "zsh-completions"
 cask "iina"
 cask "tuntap"
+cask "visual-studio-code"
 mas "Caffeine", id: 411246225
 mas "Evernote", id: 406056744
 mas "iPhoto", id: 408981381
