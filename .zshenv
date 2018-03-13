@@ -4,6 +4,15 @@ export LANG="en_AU.UTF-8"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 #export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
+# Functions
+cdpath=(~ ~/work ~/code $cdpath)
+fpath=(
+  $HOME/.zfunc
+  /usr/local/share/zsh/site-functions
+  /usr/local/share/zsh-completions
+  $fpath
+)
+
 # Visual
 export POWERLEVEL9K_MODE=nerdfont-complete
 
@@ -40,13 +49,6 @@ export PATH="/usr/local/sbin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-cdpath=(~ ~/work ~/code $cdpath)
-fpath=(
-  /usr/local/share/zsh/site-functions
-  /usr/local/share/zsh-completions
-  $fpath
-)
-
 # crap for Go
 export PATH="$(brew --prefix go)/libexec/bin:$PATH"
 export GOPATH="$HOME/code/go"
@@ -66,9 +68,6 @@ if which plenv > /dev/null; then eval "$(plenv init -)"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-
-# other
-eval "$(thefuck --alias)"
 
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 

@@ -25,7 +25,7 @@ set autoindent
 set brackets ""')>]}"
 
 ## Do case-sensitive searches by default.
-set casesensitive
+# set casesensitive
 
 ## Constantly display the cursor position in the status bar.  Note that
 ## this overrides "quickblank".
@@ -199,7 +199,7 @@ set wordbounds
 
 ## Syntax Colours
 include "/usr/local/share/nano/*.nanorc"
-include "~/.nanorc.d/Dockerfile/nanorc"
+include "~/.nanorc.d/Dockerfile.nanorc"
 include "~/.nanorc.d/apacheconf.nanorc"
 include "~/.nanorc.d/conf.nanorc"
 include "~/.nanorc.d/conky.nanorc"
@@ -218,7 +218,7 @@ include "~/.nanorc.d/sed.nanorc"
 include "~/.nanorc.d/sql.nanorc"
 include "~/.nanorc.d/swift.nanorc"
 include "~/.nanorc.d/systemd.nanorc"
-include "~/.nano-hcl.nanorc"
+#include "~/.nano-hcl.nanorc"
 include "~/.nanorc.d/xml.nanorc"
 include "~/.nanorc.d/yaml.nanorc"
 include "~/.nanorc.d/yum.nanorc"
