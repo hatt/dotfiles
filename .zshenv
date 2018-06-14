@@ -20,18 +20,15 @@ else
   export EDITOR='nano'
 fi
 
-# CLI tools
+# Tool environments
 export PAGER='less -q --tabs=2'
-
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
 
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-# crap for Go
-export PATH="$(brew --prefix go)/libexec/bin:$PATH"
-export GOPATH="$HOME/code/go"
+if [[ $SHLVL == 1 && ! -o LOGIN ]]; then
+  source ~/.zpath
+fi
 
 # crap for Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -41,13 +38,6 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 
 # crap for OCAML
 source $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-
-# script envs
-export RBENV_ROOT=~/.rbenv
-if which plenv > /dev/null; then eval "$(plenv init -)"; fi
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
 
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 

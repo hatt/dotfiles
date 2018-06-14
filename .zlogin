@@ -17,3 +17,6 @@ export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv custom_terraform_env cus
 
 export POWERLEVEL9K_STATUS_VERBOSE=true
 export POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=false
+
+# Import Paths
+source ~/.zpath
