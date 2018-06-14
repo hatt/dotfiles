@@ -1,3 +1,5 @@
+zmodload zsh/zprof
+
 # Setup zplug
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
@@ -62,10 +64,31 @@ bindkey '^[[B' down-line-or-search
 bindkey '^[^[[C' emacs-forward-word
 bindkey '^[^[[D' emacs-backward-word
 
-# Setup tool links
-source ~/.iterm2_shell_integration.zsh
+# Mac specifics
+if [[ "$OSTYPE" = darwin* ]]; then
+  if type brew &> /dev/null; then
+    # Export CFLAGS and LDFLAGS
+    export CGO_CFLAGS="-I/usr/local/include"
+    export CGO_CPPFLAGS="${CGO_CFLAGS}"
+    export CGO_CXXFLAGS="${CGO_CFLAGS}"
+    export CGO_LDFLAGS="-L/usr/local/lib"
+  fi
 
-eval "$(thefuck --alias)"
+  if [[ -r "${HOME}/.iterm2_shell_integration.zsh" ]]; then
+    source ~/.iterm2_shell_integration.zsh
+  fi
+fi
+
+# lazy load
+if type thefuck &> /dev/null; then
+  lazyLoadFuck () {
+    unalias fuck
+    unfunction lazyLoadFuck
+    eval "$(thefuck --alias)"
+  }
+
+  alias fuck=lazyLoadFuck
+fi
 
 if zplug check Vifon/deer; then
   autoload -U deer
