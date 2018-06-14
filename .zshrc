@@ -48,8 +48,8 @@ function zsh_docker_machine_active() {
 }
 
 function zsh_terraform_env_active() {
-  local terraform_env=$(cat .terraform/environment 2> /dev/null)
-  if [[ -n $terraform_env ]]; then
+  local terraform_env=$(terraform workspace show 2> /dev/null)
+  if [[ -n $terraform_env ]] && [[ $terraform_env != 'default' ]]; then
     echo -n "\uF0EE $terraform_env%{%f%}"
   fi
 }
@@ -72,6 +72,9 @@ if zplug check Vifon/deer; then
   zle -N deer
   bindkey '\ek' deer
 fi
+
+# Bash completion (for govc)
+autoload -U bashcompinit && bashcompinit
 
 if zplug check b4b4r07/enhancd; then
   # setting if enhancd is available
