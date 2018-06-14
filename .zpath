@@ -8,9 +8,11 @@ export PATH="$GOPATH/bin:$(brew --prefix go)/libexec/bin:$PATH"
 
 source $GOPATH/src/github.com/vmware/govmomi/scripts/govc_bash_completion
 
+# crap for rust
+export PATH="$HOME/.cargo/bin:$PATH"
 # script envs
 export RBENV_ROOT=~/.rbenv
-if type plenv &> /dev/null; then eval "$(plenv init -)"; fi
-if type rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
-if type pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
-if type nodenv &> /dev/null; then eval "$(nodenv init -)"; fi
+export PATH="$HOME/.nodenv/shims:$PATH"
+export PATH="$HOME/.pyenv/shims:$PATH"
+export PATH="$HOME/.plenv/shims:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"

@@ -1,5 +1,3 @@
-zmodload zsh/zprof
-
 # Setup zplug
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
@@ -79,17 +77,58 @@ if [[ "$OSTYPE" = darwin* ]]; then
   fi
 fi
 
-# lazy load
+# Lazy loading
 if type thefuck &> /dev/null; then
-  lazyLoadFuck () {
+  lazy_load_thefuck () {
     unalias fuck
-    unfunction lazyLoadFuck
+    unfunction lazy_load_thefuck
     eval "$(thefuck --alias)"
   }
 
-  alias fuck=lazyLoadFuck
+  alias fuck=lazy_load_thefuck
 fi
 
+if [[ -d "${HOME}/.rbenv" ]]; then
+  lazy_load_rbenv () {
+    unalias rbenv
+    unfunction lazy_load_rbenv
+    eval "$(rbenv init -)";
+  }
+
+  alias rbenv=lazy_load_rbenv
+fi
+
+if [[ -d "${HOME}/.plenv" ]]; then
+  lazy_load_plenv () {
+    unalias plenv
+    unfunction lazy_load_plenv
+    eval "$(plenv init -)";
+  }
+
+  alias plenv=lazy_load_plenv
+fi
+
+if [[ -d "${HOME}/.pyenv" ]]; then
+  lazy_load_pyenv () {
+    unalias pyenv
+    unfunction lazy_load_pyenv
+    eval "$(pyenv init -)";
+  }
+
+  alias pyenv=lazy_load_pyenv
+fi
+
+if [[ -d "${HOME}/.nodenv" ]]; then
+  lazy_load_nodenv () {
+    unalias nodenv
+    unfunction lazy_load_nodenv
+    eval "$(nodenv init -)";
+  }
+
+  alias nodenv=lazy_load_nodenv
+fi
+
+# Tools I never really use
 if zplug check Vifon/deer; then
   autoload -U deer
   zle -N deer
