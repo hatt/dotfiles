@@ -47,13 +47,6 @@ function zsh_docker_machine_active() {
   fi
 }
 
-function zsh_terraform_env_active() {
-  local terraform_env=$(terraform workspace show 2> /dev/null)
-  if [[ -n $terraform_env ]] && [[ $terraform_env != 'default' ]]; then
-    echo -n "\uF0EE $terraform_env%{%f%}"
-  fi
-}
-
 # Setup key bindings
 bindkey -e  ## emacs key bindings
 
@@ -126,13 +119,6 @@ if [[ -d "${HOME}/.nodenv" ]]; then
   }
 
   alias nodenv=lazy_load_nodenv
-fi
-
-# Tools I never really use
-if zplug check Vifon/deer; then
-  autoload -U deer
-  zle -N deer
-  bindkey '\ek' deer
 fi
 
 # Bash completion (for govc)

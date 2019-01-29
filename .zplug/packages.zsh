@@ -23,9 +23,6 @@ zplug "zchee/go-zsh-completions"
 # Utilities
 zplug "arzzen/calc.plugin.zsh"
 
-zplug "plugins/sublime",   from:oh-my-zsh
-zplug "plugins/colorize",  from:oh-my-zsh
-zplug "plugins/osx",       from:oh-my-zsh,		use:spotify
 zplug "plugins/terraform", from:oh-my-zsh
 
 zplug "zpm-zsh/colors"
