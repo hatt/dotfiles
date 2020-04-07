@@ -29,9 +29,9 @@ if [[ "$system_type" == "Darwin" ]]; then
   fi
 
 
-  if [ -d "$HOME/.config/iterm2" ]; then
+  if [ -d "$HOME/.config/iterm" ]; then
     echo "Setting iTerm preference folder"
-    defaults write com.googlecode.iterm2 PrefsCustomFolder "${HOME}/.config/iterm2"
+    defaults write com.googlecode.iterm2 PrefsCustomFolder "${HOME}/.config/iterm"
   fi
 
   echo "Bootstrap complete. Upload new SSH key to GitHub and run repoint yadm's remote to use SSH."
