@@ -17,6 +17,7 @@ alias df='gdf'
 alias dm='docker-machine'
 alias du='gdu'
 alias git='hub'
+alias ldd='otool -L'
 alias ls='gls --color=auto'
 alias ll="ls -lah"
 alias sed='gsed'
@@ -37,6 +38,7 @@ function drme() {
   eval $(docker-machine env $@)
 }
 
+compdef __gitcomp yadm
 compdef __docker-machine_hosts_running drme
 
 function zsh_docker_machine_active() {
