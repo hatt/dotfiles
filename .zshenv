@@ -4,6 +4,10 @@ export LANG="en_AU.UTF-8"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 #export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
+# Brew is stupid
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+
 # Functions
 cdpath=(~ ~/work ~/code $cdpath)
 fpath=(
