@@ -45,5 +45,8 @@ source $HOME/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
+# crap for kubectl
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # run this last
 skip_global_compinit=1
