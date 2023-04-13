@@ -1,0 +1,5 @@
+[gpg]
+	program = gpg
+[user]
+	name = Matt Sharpe
+	email = matt.sharpe@gmail.com
