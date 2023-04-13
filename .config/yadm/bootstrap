@@ -4,48 +4,19 @@ system_type=$(uname -s)
 
 if [[ "$system_type" == "Darwin" ]]; then
 
-  # Install Homebrew if it's missing
+  # install homebrew if it's missing
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing Homebrew"
-    /bin/bash -c $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  # Install ZPlug
-  install_zplug
-
-  # Setup yadm
-  if ! command -v yadm >/dev/null 2>&1; then
-    echo "Installing yadm"
-    brew install yadm
-  fi
-
-  # Clone dotfiles
-  install_dotfiles
-
-  # Start the install
   if [ -f "$HOME/.Brewfile" ]; then
-    echo "Updating Homebrew bundle"
+    echo "Updating homebrew bundle"
     brew bundle --global
   fi
 
-
-  if [ -d "$HOME/.config/iterm" ]; then
+  if [ -d "$HOME/.iterm2" ]; then
     echo "Setting iTerm preference folder"
-    defaults write com.googlecode.iterm2 PrefsCustomFolder "${HOME}/.config/iterm"
+    defaults write com.googlecode.iterm2 PrefsCustomFolder "${HOME}/.iterm2"
   fi
-
-  echo "Bootstrap complete. Upload new SSH key to GitHub and run repoint yadm's remote to use SSH."
 fi
-
-function install_zplug {
-  if ! command -v zplug >/dev/null 2>&1; then
-    echo "Installing zplug"
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-  fi
-}
-
-function install_dotfiles {
-  echo "Installing dotfiles"
-  yadm clone https://github.com/hatt/dotfiles.git
-  yadm submodule update --init --recursive
-}

@@ -1,7 +1,7 @@
 ## Silently ignore problems with unknown directives in the nanorc file.
 ## Useful when your nanorc file might be read on systems with multiple
 ## versions of nano installed (e.g. your home directory is on NFS).
-set quiet
+#set quiet
 
 ## Use auto-indentation.
 set autoindent
@@ -44,7 +44,7 @@ set fill -8
 set historylog
 
 ## Make the justify command kill whitespace at the end of lines.
-set justifytrim
+#set justifytrim
 
 ## Display line numbers to the left of the text.
 unset linenumbers
@@ -207,6 +207,7 @@ include "~/.nanorc.d/dotenv.nanorc"
 include "~/.nanorc.d/erb.nanorc"
 include "~/.nanorc.d/git.nanorc"
 include "~/.nanorc.d/haskell.nanorc"
+include "~/.nanorc.d/javascript.nanorc"
 include "~/.nanorc.d/kickstart.nanorc"
 include "~/.nanorc.d/markdown.nanorc"
 include "~/.nanorc.d/nginx.nanorc"

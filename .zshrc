@@ -9,6 +9,9 @@ source ~/.zplug/init.zsh
 zplug check || zplug install
 zplug load
 
+# Define this first so `ls` can use it
+export TIME_STYLE="+%a %b %e %H:%M"
+
 # Load aliases
 alias bb="brew bundle --global"
 alias cot='colorize_via_pygmentize'
@@ -17,6 +20,7 @@ alias df='gdf'
 alias dm='docker-machine'
 alias du='gdu'
 alias git='hub'
+alias ldd='otool -L'
 alias ls='gls --color=auto'
 alias ll="ls -lah"
 alias sed='gsed'
@@ -37,6 +41,7 @@ function drme() {
   eval $(docker-machine env $@)
 }
 
+compdef __gitcomp yadm
 compdef __docker-machine_hosts_running drme
 
 function zsh_docker_machine_active() {

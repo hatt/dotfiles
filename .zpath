@@ -6,7 +6,7 @@ export PATH="/usr/local/sbin:$PATH"
 export GOPATH="$HOME/code/go"
 export PATH="$GOPATH/bin:$(brew --prefix go)/libexec/bin:$PATH"
 
-source $GOPATH/src/github.com/vmware/govmomi/scripts/govc_bash_completion
+#source $GOPATH/src/github.com/vmware/govmomi/scripts/govc_bash_completion
 
 # crap for rust
 export PATH="$HOME/.cargo/bin:$PATH"
